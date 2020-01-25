@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+
+service Blog {
+  rpc Create (Article) returns (Empty);
+  rpc List (Empty) returns (ListOfArticles);
+}
+
+message Article {
+  string name = 1;
+  string author = 2;
+  string content = 3;
+}
+
+message ListOfArticles {
+  repeated Article articles = 1;
+}
+
+message Empty {
+}
