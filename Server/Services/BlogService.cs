@@ -5,14 +5,24 @@ namespace Server
 {
     public class BlogService : Blog.BlogBase
     {
-        public override Task<Empty> Create(Article request, ServerCallContext context)
+        private readonly ArticleService _articleService;
+
+        public BlogService(ArticleService articleService)
         {
-            return base.Create(request, context);
+            _articleService = articleService;
+        }
+
+        public override Task<Empty> Create(Article article, ServerCallContext context)
+        {
+            _articleService.Articles.Add(article);
+            return Task.FromResult(new Empty());
         }
 
         public override Task<ListOfArticles> List(Empty request, ServerCallContext context)
         {
-            return base.List(request, context);
+            var articles = _articleService.Articles;
+            var listOfArticles = new ListOfArticles {Articles = { articles }};
+            return Task.FromResult(listOfArticles);
         }
     }
 }
