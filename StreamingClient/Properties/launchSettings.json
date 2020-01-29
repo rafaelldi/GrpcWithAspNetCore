@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "StreamingClient": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

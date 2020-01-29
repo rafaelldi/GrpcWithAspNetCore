@@ -4,7 +4,7 @@ using Grpc.Core;
 
 namespace StreamingServer.Services
 {
-    public partial class BlogService : BlogServer.BlogServerBase
+    public class BlogService : BlogServer.BlogServerBase
     {
         private readonly ArticleService _articleService;
 

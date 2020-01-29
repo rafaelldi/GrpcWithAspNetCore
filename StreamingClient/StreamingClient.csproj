@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>dotnet-StreamingClient-84B2F71C-3E05-4E48-A14B-55A2D5DC7342</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.11.2" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.26.0" />
+    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.26.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.26.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Protobuf Include="..\BlogStreaming.proto" GrpcServices="BlogClient" />
+  </ItemGroup>
+
+</Project>
