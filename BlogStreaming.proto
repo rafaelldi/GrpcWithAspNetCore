@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+service BlogServer {
+  rpc Create (Article) returns (google.protobuf.Empty);
+  rpc List (google.protobuf.Empty) returns (stream Article);
+}
+
+message Article {
+  string name = 1;
+  string author = 2;
+  string content = 3;
+}

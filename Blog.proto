@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-
 service Blog {
   rpc Create (Article) returns (Empty);
   rpc List (Empty) returns (ListOfArticles);
